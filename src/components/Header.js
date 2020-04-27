@@ -3,38 +3,61 @@ import styled from 'styled-components'
 
 const Nav = styled.nav`
 display: flex;
-float: right;
+justify-content: space-evenly;
+align-items: center;
+background: #282c34;
+color: white;
+height: 4em;
+`
+const Ul = styled.ul`
+list-style-type: none;
+margin-right: 10em;
+`
+const Li = styled.li`
+display: inline;
+margin: 10px;
+`
+const Img = styled.img`
+width: 4%;
 `
 const Div1 = styled.div`
+margin-left: 20em;
 `
 const Div2 = styled.div`
 `
+const Input = styled.input`
+margin: 1em;
+padding: 9px;
+`
+const Button = styled.button`
+margin: 0.5em;
+background: #282c34;
+border: #282c34;
+color: white;
+`
 
-
-function Header(){
+class Header extends React.Component{
+    render(){
     return(
         <div>
-            <nav>
-                <div>
-                    <img src='/Asset/Img/download.png' alt='logo'/>
-                    <ul>
-                        <li>Features</li>
-                        <li>Business</li>
-                        <li>Explore</li>
-                        <li>Marketplace</li>
-                        <li>Pricing</li>
-                    </ul>
-                </div>
-                <div>
-                    <input type='text' placeholder='search Udohub' />
-                    <ul>
-                        <li>Sign In</li>
-                        <li>Sign Up</li>
-                    </ul>
-                </div>
-            </nav>
+            <Nav>
+            <Img src='/Asset/Img/download.png' alt='logo'/>
+                <Ul>
+                    <Li>Features</Li>
+                    <Li>Business</Li>
+                    <Li>Explore</Li>
+                    <Li>Marketplace</Li>
+                    <Li>Pricing</Li>
+                </Ul>
+                <Div1>
+                <Input type='text' placeholder='search Udohub' />
+                <Button>Sign In</Button>
+                <Button>Sign Up</Button>
+                </Div1>
+            </Nav>
         </div>
     )
+}
 }
 
 export default Header
