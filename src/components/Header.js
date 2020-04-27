@@ -37,6 +37,20 @@ color: white;
 `
 
 class Header extends React.Component{
+    constructor(){
+        super()
+        this.state = {
+            text: ''
+        }
+        this.change = this.change.bind(this)
+    }
+
+    change(e){
+        const {name, value} = e.target
+        this.setState ({[name ] : e.target.value
+        })
+    }
+
     render(){
     return(
         <div>
@@ -50,11 +64,18 @@ class Header extends React.Component{
                     <Li>Pricing</Li>
                 </Ul>
                 <Div1>
-                <Input type='text' placeholder='search Udohub' />
+                <Input 
+                    type='text'
+                    name='text'
+                    value={this.state.text}
+                    placeholder='search Udohub'
+                    onChange={this.change}
+                    />
                 <Button>Sign In</Button>
                 <Button>Sign Up</Button>
                 </Div1>
             </Nav>
+            <h1>{this.state.text}</h1>
         </div>
     )
 }
