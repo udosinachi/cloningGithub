@@ -6,23 +6,24 @@ text-decoration: none;
 `
 const Div = styled.div`
 display: flex;
-justify-content: space-evenly;
+justify-content: center;
 color: white;
 height: 100vh;
-background-color: #282c34;
+background-color: #202020;
+align-items: center;
 `
 const Label = styled.label`
 `
 const Div1 = styled.div`
-width: 30%;
-margin: 10%;
+width: 20%;
+margin-bottom: 100px;
 `
 const Div2 = styled.div`
-width: 30%;
+width: 20%;
 background: white;
 color: black;
-margin: 6em;
-padding: 5em;
+padding: 2em;
+margin-left: 4em;
 `
 const P = styled.p`
 font-size: 11px;
@@ -48,7 +49,17 @@ class Body extends React.Component{
             email: '',
             password: '',
         }
+
+        this.change = this.change.bind(this)
     }
+
+    change(e){
+        const {name, value} = e.target
+        this.setState ({
+            [name] : e.target.value
+        })
+    }
+
     render(){
         return(
             <Div>
@@ -61,11 +72,28 @@ class Body extends React.Component{
                 <Div2>
                     <form>
                         <Label><strong>Username</strong></Label><br/>
-                        <Input type='text' placeholder='Pick a username' /><br/>
+                        <Input 
+                            type='text' 
+                            placeholder='Pick a username' 
+                            name='text' 
+                            value={this.state.text}
+                            onChange={this.change}
+                            /><br/>
                         <Label><strong>Email</strong></Label><br/>
-                        <Input type='email' placeholder='Your email address' /><br/>
+                        <Input 
+                            type='email' 
+                            placeholder='Your email address' 
+                            name='email' 
+                            value={this.state.email}
+                            onChange={this.change}
+                            /><br/>
                         <Label><strong>Password</strong></Label><br/>
-                        <Input placeholder='password' /><br/>
+                        <Input 
+                            placeholder='password' 
+                            name='password' 
+                            value={this.state.password}
+                            onChange={this.change}
+                            /><br/>
                         <Label><P>Use at least one letter, one number and seven character</P></Label>
                         <Button>Sign up for udohub</Button>
                         <P>By clicking 'Sign up for udohub', you agree to our <A href='#'>terms and services</A> and <A href='#'>privacy policy</A>.
