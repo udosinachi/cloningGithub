@@ -75,7 +75,6 @@ class Header extends React.Component{
                 <Button>Sign Up</Button>
                 </Div1>
             </Nav>
-            <h1>{this.state.text}</h1>
         </div>
     )
 }
