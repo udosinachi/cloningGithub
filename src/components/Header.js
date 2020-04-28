@@ -55,7 +55,7 @@ class Header extends React.Component{
     return(
         <div>
             <Nav>
-            <Img src='/Asset/Img/download.png' alt='logo'/>
+            <Img src='/Asset/Img/download (1).png' alt='logo'/>
                 <Ul>
                     <Li>Features</Li>
                     <Li>Business</Li>
