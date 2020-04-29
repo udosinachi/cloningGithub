@@ -7,9 +7,9 @@ import Body from './components/Body'
 class App extends React.Component{
   render(){
     return(
-      <div>
-        <Header />
-        <Body />
+        <div>
+          <Header />
+          <Body />
       </div>
     )
   }
