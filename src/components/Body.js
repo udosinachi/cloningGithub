@@ -22,7 +22,7 @@ const Div2 = styled.div`
 width: 20%;
 background: white;
 color: black;
-padding: 2em;
+padding: 4em;
 margin-left: 4em;
 `
 const P = styled.p`
@@ -51,6 +51,7 @@ class Body extends React.Component{
         }
 
         this.change = this.change.bind(this)
+        this.submit = this.submit.bind(this)
     }
 
     change(e){
@@ -58,6 +59,28 @@ class Body extends React.Component{
         this.setState ({
             [name] : e.target.value
         })
+    }
+
+    submit(e){
+        e.preventDefault()
+        
+        const user = {
+            text: this.state.text,
+            email: this.state.body,
+            password: this.state.password
+        }
+
+        fetch('https://jsonplaceholder.typicode.com/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            text: JSON.stringify(user),
+            email: JSON.stringify(user),
+            password: JSON.stringify(user)
+        })
+        .then(res => res.json())
+        .then(data => console.log(data));
     }
 
     render(){
@@ -70,7 +93,7 @@ class Body extends React.Component{
                     </p>
                 </Div1>
                 <Div2>
-                    <form>
+                    <form onSubmit={this.submit}>
                         <Label><strong>Username</strong></Label><br/>
                         <Input 
                             type='text' 

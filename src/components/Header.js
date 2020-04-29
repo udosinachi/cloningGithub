@@ -11,7 +11,7 @@ height: 4em;
 `
 const Ul = styled.ul`
 list-style-type: none;
-margin-right: 10em;
+margin-right: 5em;
 `
 const Li = styled.li`
 display: inline;
@@ -22,7 +22,7 @@ width: 4%;
 border-radius: 4em;
 `
 const Div1 = styled.div`
-margin-left: 20em;
+margin-left: 15em;
 `
 const Div2 = styled.div`
 `
